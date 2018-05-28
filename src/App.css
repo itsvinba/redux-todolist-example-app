@@ -1,3 +1,7 @@
+ul {
+  list-style-position: inside;
+}
+
 .App {
   text-align: center;
 }
