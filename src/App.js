@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import Redux from 'redux';
+import Redux, { createStore } from 'redux'
 import logo from './logo.svg';
 import './App.css';
+
+const initialState = {
+  todos: []
+}
 
 class App extends Component {
   render() {
@@ -13,7 +17,7 @@ class App extends Component {
         </header>
         <p className="App-intro">
           <AddTodo />
-          <VisibleTodoList />
+          <TodoList />
         </p>
       </div>
     );
@@ -24,7 +28,9 @@ class AddTodo extends Component {
   render() {
     return (
       <div>
-        <button>
+        <button onClick = {() => {
+          
+        }}>
           Add Todo
         </button>
       </div>
@@ -32,7 +38,7 @@ class AddTodo extends Component {
   }
 }
 
-class VisibleTodoList extends Component {
+class TodoList extends Component {
   render() {
     return (
       <ul>
