@@ -1,11 +1,29 @@
 import React, { Component } from 'react';
-import Redux, { createStore } from 'redux'
+import Redux, { createStore } from 'redux';
+
+import todoApp from './reducers/todos';
+import { addTodo } from './actions';
+
 import logo from './logo.svg';
 import './App.css';
 
 const initialState = {
   todos: []
 }
+
+const store = createStore(todoApp)
+
+console.log(store)
+
+const unsubscribe = store.subscribe(() =>
+  console.log(store.getState())
+)
+
+store.dispatch(addTodo('Learn about actions'))
+store.dispatch(addTodo('Learn about reducers'))
+store.dispatch(addTodo('Learn about store'))
+
+unsubscribe()
 
 class App extends Component {
   render() {
