@@ -13,8 +13,7 @@ const initialState = {
 
 const store = createStore(todoApp)
 
-console.log(store)
-
+// --- Testing store with reducer & action ---
 const unsubscribe = store.subscribe(() =>
   console.log(store.getState())
 )
@@ -24,6 +23,7 @@ store.dispatch(addTodo('Learn about reducers'))
 store.dispatch(addTodo('Learn about store'))
 
 unsubscribe()
+// --------------------------------------------
 
 class App extends Component {
   render() {
