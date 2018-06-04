@@ -22,7 +22,10 @@ export const ADD_TODO = 'ADD_TODO'
 // ​
 let nextTodoId = 0
 export function addTodo(text) {
-  return { id: nextTodoId++, type: ADD_TODO, text }
+  return { 
+    type: ADD_TODO,
+    id: nextTodoId++, 
+    text }
 }
 // ​
 // export function toggleTodo(id) {
