@@ -1,5 +1,3 @@
-import { combineReducers } from 'redux'
-
 const addToDos = (state = [], action) => {
   switch(action.type){
     case 'ADD_TODO':
@@ -15,8 +13,4 @@ const addToDos = (state = [], action) => {
   }
 }
 
-const todoApp = combineReducers({
-  addToDos,
-})
-
-export default todoApp
+export default addToDos
