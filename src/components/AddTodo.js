@@ -35,10 +35,10 @@ class AddTodo extends Component {
   }
   handleSubmit(event) {
     value = this.state.value;
-    this.props.addTodo();
-    console.log(this.props);
-    this.setState({value: ''});
-    // console.log(store.getState())
+    if (value.trim() != '') {
+      this.props.addTodo();
+      this.setState({value: ''});
+    }
     event.preventDefault();
   }
 
