@@ -5,6 +5,7 @@
 
 // Custome Dependencies
   import AddTodo from './components/AddTodo'
+  import TodoList from './components/TodoList'
   import todoApp from './reducers/todos';
   import { addTodo } from './actions';
   import logo from './logo.svg';
@@ -38,7 +39,7 @@ class App extends Component {
           <AppHeader />
           <br/><br/>
           <AddTodo />
-          <TodoList todos={store.getState()}/>
+          <TodoList />
         </div>
       </Provider>
     );
@@ -56,19 +57,6 @@ class AppHeader extends Component {
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">React Redux Example Todo App</h1>
       </header>
-    )
-  }
-}
-
-class TodoList extends Component {
-  render() {
-    return (
-      <ul>
-        {this.props.todos.map(todo => 
-          <li key={todo.id}>
-            {todo.text}
-          </li> )}
-      </ul>
     )
   }
 }
