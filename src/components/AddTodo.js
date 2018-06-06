@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 // Custom Dependencies
 import { addTodo } from '../actions';
 
+let value
+
 const mapStateToProps = (state) => {
   return {
     todos: state
@@ -13,7 +15,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addTodo: (value) => dispatch(addTodo(value))
+    addTodo: () => dispatch(addTodo(value))
   }
 }
 
@@ -32,9 +34,11 @@ class AddTodo extends Component {
     this.setState({value: event.target.value});
   }
   handleSubmit(event) {
-    this.props.addTodo(this.state.value);
+    value = this.state.value;
+    this.props.addTodo();
     console.log(this.props);
     this.setState({value: ''});
+    // console.log(store.getState())
     event.preventDefault();
   }
 
